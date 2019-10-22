@@ -18,6 +18,10 @@ layout: docs
 > You are solely responsible for any damage or other loss that occurs as a result of running Polynote.
 {:.warning} 
 
+## License
+
+Polynote is available under the [Apache License, Version 2.0](https://github.com/polynote/polynote/LICENSE).
+
 ## Download
 Polynote consists of a JVM-based server application, which serves a web-based client. To try it locally, find the latest
 release on the [releases page](https://github.com/polynote/polynote/releases){:target="_blank"} and download the attached
