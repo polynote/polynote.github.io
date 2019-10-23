@@ -1,6 +1,12 @@
 @import url('https://fonts.googleapis.com/css?family=Raleway:400,400i,700,700i&display=swap');
 
-html, body {
+html {
+    padding: 0;
+    margin: 0;
+    background: black;
+}
+
+body {
     background: white;
     padding: 0;
     margin: 0;
@@ -239,6 +245,10 @@ section {
     margin-left: 2em;
 }*/
 
+section.page-content, section.post-content {
+    max-width: 60em;
+}
+
 .page-content p, .post-content p {
     hyphens: auto;
 }
@@ -292,16 +302,19 @@ footer {
     /*background: linear-gradient(to bottom, #444444, black);*/
     margin-top: 8em;
     color: white;
-    font-size: 10pt;
 }
 
 footer section {
-    max-width: 80em;
     display: grid;
+    grid-template-columns: 1fr 1fr;
 }
 
 footer a {
     color: white;
+}
+
+footer nav {
+    font-size: 11pt;
 }
 
 footer nav ul {
@@ -309,4 +322,8 @@ footer nav ul {
     column-count: 2;
     margin: 0;
     padding: 0;
+}
+
+footer nav ul li {
+    padding: .5em 0;
 }

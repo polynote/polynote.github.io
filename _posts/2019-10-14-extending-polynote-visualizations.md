@@ -57,6 +57,60 @@ We'll have to edit `build.sbt` in order to set up a few things:
 - Add the Sonatype snapshots repository – where we're currently publishing artifacts: `repositories += Resolver.sonatypeRepo("snapshots")`
 - Add Breeze and `polynote-runtime` to the libraryDependencies: `libraryDependencies ++= Seq("org.scalanlp" %% "breeze" % "1.0", "org.polynote" %% "polynote-runtime % "0.2.5-SNAPSHOT")`
 
-Then we'll create the `src/main/scala` directory, and add a new source file `polynote/breeze/BreezeReprs.scala`.
+## The `ReprsOf` typeclass
 
-TODO: finish this
+The machinery behind Polynote's visualizations is driven by a typeclass, [`ReprsOf`](https://github.com/polynote/polynote/blob/master/polynote-runtime/src/main/scala/polynote/runtime/ReprsOf.scala).
+It has one method to be implemented:
+
+```scala
+trait ReprsOf[T] extends Serializable {
+  def apply(value: T): Array[ValueRepr]
+}
+```
+
+Given a value of its target type, it returns an array of `ValueRepr` objects. [`ValueRepr`](https://github.com/polynote/polynote/blob/master/polynote-runtime/src/main/scala/polynote/runtime/ValueRepr.scala) is a sealed trait
+which gives several options for how to represent data to the client:
+
+* `StringRepr` is simply a text value.
+* `MIMERepr` is a string value with an associated MIME type string.
+* `DataRepr` is a binary-encoded data value with an associated data type.
+* `LazyDataRepr` is similar to `DataRepr`, but is lazily evaluated (and each client must ask for it, while `DataRepr`s are eagerly broadcast).
+* `StreamingDataRepr` represents a stream of binary data values; each client must request items from the stream. This is used for table-like data.
+
+For the Breeze matrix, we're going to use `MIMERepr` with a LaTeX MIME type `application/x-latex`.
+
+## Orphan instances
+
+In order for Polynote to find `ReprsOf[DenseMatrix[Double]]`, it has to be in implicit scope for that type. So, right away
+it seems we have a problem: we can't place this instance in the companion of `ReprsOf` without making `polynote-runtime`
+have a dependency on Breeze; nor can we place it in the companion of `DenseMatrix` without making Breeze have a
+dependency on `polynote-runtime`. We want to instead define the instance in our new module, which has a dependency
+on both. But how can we get the instance into implicit scope?
+
+The `ReprsOf` typeclass is designed to allow for this. It has a macro in implicit scope, which will search the
+dependency classpath for metadata files `META-INF/expanded-scopes/polynote.runtime.ReprsOf`. This metadata file
+should contain the fully-qualified name of a trait which extends `ReprsOf`, and that trait's implicit scope will be
+effectively added to `ReprsOf`'s.
+
+Let's create the `src/main/scala` directory, and add a new source file `polynote/breeze/BreezeReprsOf.scala`:
+
+```scala
+package polynote.breeze
+
+import polynote.runtime.{ReprsOf, ValueRepr, MIMERepr}
+import breeze.linalg.DenseMatrix
+
+trait BreezeReprsOf[T] extends ReprsOf[T]
+
+object BreezeReprsOf {
+  implicit val doubleDenseMatrix: BreezeReprsOf[DenseMatrix[Double]] =
+    new BreezeReprsOf[DenseMatrix[Double]] {
+      def apply(value: DenseMatrix[Double]): Array[ValueRepr] = Array(
+        MIMERepr(
+          "application/x-latex",
+          
+        )
+      )
+    }
+} 
+```
