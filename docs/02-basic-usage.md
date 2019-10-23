@@ -17,14 +17,14 @@ For now, let's just create a new notebook. Click the "New notebook" icon as the 
 (such as "First Notebook"). Click "OK". The new notebook appears in the Notebooks pane, and is opened in a Polynote
 tab. The new notebook contains a single text cell. Click on that and you'll see the text editing toolbar appear:
 
-[!images/text-editing.png](images/text-editing.png)
+![images/text-editing.png](images/text-editing.png)
 
 This contextual toolbar appears when it's useful – when editing a text cell. A notebook is made up of text cells and
 code cells; text cells are useful for writing rich text explanations, and code cells are what actually get run. Play
 around with the text formatting tools for a bit, and then we'll create a new cell by pressing `Shift`{:.key}-`Enter`{:.key}.
 The new cell is a code cell, with its language (by default) set to Scala:
 
-[!images/code-cell.png](images/code-cell.png)
+![images/code-cell.png](images/code-cell.png)
 
 You can change the language with the dropdown – there's one right above the cell and one on the main toolbar. If you
 wanted another text cell instead, you can change it to Text as well (but only in the dropdown on the main toolbar) and

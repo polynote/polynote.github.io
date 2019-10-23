@@ -20,7 +20,7 @@ layout: docs
 
 ## License
 
-Polynote is available under the [Apache License, Version 2.0](https://github.com/polynote/polynote/LICENSE).
+Polynote is available under the [Apache License, Version 2.0](https://github.com/polynote/polynote/blob/master/LICENSE).
 
 ## Download
 Polynote consists of a JVM-based server application, which serves a web-based client. To try it locally, find the latest

@@ -251,6 +251,10 @@ section {
     max-width: 60em;
 }
 
+.page-content p img, .post-content p img {
+    max-width: 100%;
+}
+
 .warning {
     background-color: #fff8c4;
     border: 1px solid #f7deae;
