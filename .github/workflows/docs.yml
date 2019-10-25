@@ -16,7 +16,7 @@ jobs:
         rm -r polynote/
         git config --global user.email "polynote-ci@polynote.org"
         git config --global user.name "Polynote CI"
-        git commit -am "automated docs update"
+        git commit -am "automated docs update" || true
     - name: Push changes
       uses: ad-m/github-push-action@master
       with:
