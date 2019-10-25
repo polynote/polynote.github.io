@@ -1,0 +1,21 @@
+name: Docs from Polynote
+
+on: repository_dispatch
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+    - name: Docs
+      run: |
+        git clone https://github.com/polynote/polynote.git
+        cp polynote/docs/*.md ./docs/
+        rm -r polynote/
+        git config --global user.email "polynote-ci@polynote.org"
+        git config --global user.name "Polynote CI"
+        git commit -am "automated docs update"
+    - name: Push changes
+      uses: ad-m/github-push-action@master
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
