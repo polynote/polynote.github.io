@@ -20,8 +20,8 @@ submitting a pull request.
 ## Issues and Documentation
 
 You can contribute to the Polynote project without writing a single line of code! We also need help with writing and
-maintaining documentation, and with user testing. Documentation pull requests can be submitted to the main repository
-(you'll find the documentation in markdown format in the `docs` directory). We'd also appreciate [issue reports](https://github.com/polynote/polynote/issues)
+maintaining documentation, and with user testing. Documentation pull requests can be submitted to the [main repository](https://github.com/polynote/polynote/)
+(you'll find the documentation in markdown format in the [`docs` directory](https://github.com/polynote/polynote/tree/master/docs)). We'd also appreciate [issue reports](https://github.com/polynote/polynote/issues)
 that you find while using the software.
 
 ## Community
