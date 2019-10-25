@@ -1,6 +1,8 @@
 name: Docs from Polynote
 
-on: repository_dispatch
+on: 
+  schedule:
+    - cron: '*/15 * * * *'
 
 jobs:
   build:
