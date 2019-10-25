@@ -47,6 +47,8 @@ cd polynote
   ``` 
 - *Spark support*: In order to use Spark with kernel isolation, you'll need to [install Apache Spark&trade;](https://spark.apache.org/downloads.html).
   Polynote will use the `spark-submit` command in order to start isolated kernels.
+  
+- *Java 8* is currently required. Polynote does not currently run on later versions.  
 
 ## Configure
 To change any of the default configuration, you'll need to copy the included `config-template.yaml` file to `config.yaml`.
