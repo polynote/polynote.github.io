@@ -20,5 +20,5 @@ jobs:
         git commit -am "automated docs update" || true
     - name: Create PR with changes
       uses: peter-evans/create-pull-request@v1.5.4
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
