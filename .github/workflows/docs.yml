@@ -12,7 +12,7 @@ jobs:
     - name: Docs
       run: |
         git clone https://github.com/polynote/polynote.git
-        cp -r polynote/docs/ ./docs/
+        cp -r polynote/docs/. docs/
         git status
         rm -r polynote/
         git config --global user.email "polynote-ci@polynote.org"
