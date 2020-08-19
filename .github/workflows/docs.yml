@@ -1,6 +1,9 @@
 name: Docs from Polynote
 
 on: 
+  push:
+    branches:
+      - master
   schedule:
     - cron: '*/15 * * * *'
 
