@@ -33,10 +33,12 @@ cd polynote
   other platforms and browsers soon. Feel free to try it on your platform, and be sure to let us know about any issues
   you encounter by filing a bug report.
   
+  _Windows:_ Some users have reported that Polynote runs successfully on Windows Subsystem for Linux. Please see these issues for more information: [#555](https://github.com/polynote/polynote/issues/555), [#671](https://github.com/polynote/polynote/issues/671). 
+  
   Polynote has been successfully tested on both Java 8 and Java 11.
   
 - *Spark support*: In order to use Spark with kernel isolation, you'll need to [install Apache Spark&trade;](https://spark.apache.org/downloads.html).
-  If you'll be using Spark with Polynote, please make sure you read this [note about Spark and Polynote](02-basic-usage.md#Using-Spark-with-Polynote) for more information. 
+  If you'll be using Spark with Polynote, please make sure you read this [note about Spark and Polynote](02-basic-usage.md#using-spark-with-polynote) for more information. 
   - Polynote will use the `spark-submit` command in order to start isolated kernels, so it needs the `spark-submit` command 
     to be working properly and available on the `PATH` of the environment you used to launch the server.
       - On a Mac with [Homebrew](https://brew.sh), you can install Spark locally with `brew install apache-spark`.
@@ -59,15 +61,11 @@ cd polynote
   [Python's installation instructions](https://wiki.python.org/moin/BeginnersGuide/Download){:target="_blank"} for
   instructions on installing these packages.
   
-  You'll also need to install some Python dependencies `jep`, `jedi`, `virtualenv`:
+  You'll also need to install Polynote's Python dependencies:
   
   ```
-  pip3 install jep jedi pyspark virtualenv
+  pip3 install -r ./requirements.txt
   ``` 
-  
-  For PySpark support you'll want to install `pyspark` as well. 
-  
-  Additionally, you will probably want to install `numpy` and `pandas`. 
   
 
 ## Configure
