@@ -33,7 +33,7 @@ be moving back and forth between Python and Scala a lot, we highly recommend at 
 
 Our goals right now are to support a few, key use-cases with a focus on sharing from Scala to Python, 
 such as plotting data generated in Scala with `matplotlib`, or using Scala-generated data with `tensorflow` and 
-`scikit-learn`. We've found that the interop between Python and Scala can be very powerful even if it's limited to these 
+`scikit-learn`. We've found that the interop between Python and Scala can be very powerful even if its limited to these 
 simple cases. 
 
 Here are a few important points to keep in mind when sharing between Python and Scala:
