@@ -11,6 +11,7 @@ jobs:
     - uses: actions/checkout@v1
     - name: Docs
       run: |
+        set -x
         git clone https://github.com/polynote/polynote.git
         cp -r polynote/docs/. docs/
         git status
