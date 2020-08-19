@@ -8,7 +8,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v1
+    - uses: actions/checkout@v2
     - name: Docs
       run: |
         set -x
@@ -20,6 +20,6 @@ jobs:
         git config --global user.name "Polynote CI"
         git commit -am "automated docs update" || true
     - name: Create PR with changes
-      uses: peter-evans/create-pull-request@v1.5.4
+      uses: peter-evans/create-pull-request@v3
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
