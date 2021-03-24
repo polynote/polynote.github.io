@@ -1,0 +1,61 @@
+site_name: Polynote
+extra_css:
+  - style/style.css
+plugins:
+  - search
+markdown_extensions:
+  - toc:
+      permalink: true
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.highlight
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.tabbed
+  - pymdownx.magiclink
+  - footnotes
+  - attr_list
+repo_url: https://github.com/polynote/polynote
+repo_name: polynote
+nav:
+  - index.md
+  - Docs:
+    - docs/index.md
+    - Installation: docs/installation.md
+    - Basic Usage: docs/basic-usage.md
+    - Mixing Programming Languages: docs/mixing-programming-languages.md
+    - Using Spark with Polynote: docs/spark.md
+    - Tour:
+      - docs/tour.md
+      - Toolbar: docs/toolbar.md
+      - Text Cells: docs/text-cells.md
+      - Code Cells: docs/code-cells.md
+      - Visualization and Viz Cells: docs/visualization-and-viz-cells.md
+      - Symbol Table: docs/symbol-table.md
+      - Importing and Exporting Files: docs/import-export.md
+      - Notebook Configuration: docs/notebook-config.md
+    - FAQ: docs/faq.md
+    - Advanced:
+      - Server Configuration: docs/server-configuration.md
+      - Using Polynote with Docker: docs/docker.md
+  - About: about.md
+  - Contribute: contribute.md
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/polynote/polynote
+    - icon: fontawesome/brands/gitter
+      link: https://gitter.im/polynote/polynote
+theme:
+  name: material
+  logo: images/logo_dark.svg
+  favicon: favicon.ico
+  custom_dir: docs/overrides
+  palette:
+    primary: black
+  features:
+    - navigation.instant
+    - navigation.tabs
+    - navigation.expand
+

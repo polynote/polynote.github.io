@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block libs %}
+    {{ super() }}
+    <script src="https://unpkg.com/freezeframe/dist/freezeframe.min.js"></script>
+{% endblock %}}
+
+{% block scripts %}
+    {{ super() }}
+    <script type="text/javascript">
+        new Freezeframe('img[src$=".gif"]:not(img[src="images/hero-animation.gif"])',  // super-hacky way to autoplay the front-page animation
+            {
+                overlay: true,
+                trigger: "click",
+                responsive: false
+            }
+        );
+    </script>
+{% endblock %}
