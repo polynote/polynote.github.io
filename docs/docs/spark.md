@@ -1,10 +1,11 @@
 # Using Spark with Polynote
 
-Polynote has deep integration with [Apache Spark](https://spark.apache.org). However, it can also run without Spark support enabled.
-In fact, since launching a Spark session can be expensive, Polynote runs your notebooks without Spark support by default.
+Polynote has deep integration with [Apache Spark](https://spark.apache.org), and supports running both Scala and Python
+code with Spark out of the box. 
 
-Polynote attempts to be smart about whether to launch a notebook with Spark: it'll only launch a Spark session if you
-have any Spark configuration parameters in the notebook config. So the fastest way to get started with Spark is to add
-something like `spark.master: local[*]` to your notebook configuration, like so:
+In order to use Spark, you must first have it [installed](installation.md#spark-support). Then, open the 
+[configuration](notebook-configuration.md) for the notebook you'd like to use with Spark, and scroll down to the 
+`Spark configuration` section. As long as you set anything there - any Spark property, any [Spark template](configuration.md#spark)
+- and Polynote will launch your notebook with Spark enabled. 
 
 ![spark-master-config](images/spark-master-config.png)

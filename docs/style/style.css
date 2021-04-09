@@ -230,3 +230,21 @@ p code {
 .ff-overlay {
     z-index: 2 !important; /* the freezeframe library CSS has a z-index of 100 for some reason which messes with other things */
 }
+
+.centered-image, .ff-image {
+    /* center small images on screen */
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.ff-canvas {
+    /* center the freezeframe canvas to match the image*/
+    right: 0;
+    margin: auto;
+}
+
+.inline-image {
+    height: 1.5em !important;
+    vertical-align: middle;
+}

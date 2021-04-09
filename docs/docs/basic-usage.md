@@ -40,15 +40,15 @@ This contextual toolbar appears when it's useful, based on the currently active 
 interact with cells of various types. 
 
 !!!tip ""
-    Check out the [tour](tour.md#toolbar) for a more comprehensive breakdown of the toolbar and the different cell types.
+    Check out the [tour](toolbar.md) for a more comprehensive breakdown of the toolbar and the different cell types.
 
 ## Creating a new cell
 
 A notebook document is made up of a collection of cells. Currently, Polynote supports three cell types: text cells, 
 code cells, and visualization (viz) cells. 
 
-[Text cells](tour.md#text-cells) are useful for writing rich text explanations, [code cells](tour.md#code-cells) contain 
-the code that actually gets run in the notebook, and [viz cells](tour.md#viz-cells) aid in inspecting and visualizing data. 
+[Text cells](text-cells.md) are useful for writing rich text explanations, [code cells](code-cells.md) contain 
+the code that actually gets run in the notebook, and [viz cells](visualization-and-viz-cells.md) aid in inspecting and visualizing data. 
 
 Now that we've seen a text cell, let's create a new code cell. If you hover the mouse above and below the text cell, 
 you'll see a divider appear with a small `+` symbol. Clicking on that divider will create a new cell in its place. 

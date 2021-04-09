@@ -6,14 +6,22 @@
 {% endblock %}}
 
 {% block scripts %}
-    {{ super() }}
     <script type="text/javascript">
-        new Freezeframe('img[src$=".gif"]:not(img[src="images/hero-animation.gif"])',  // super-hacky way to autoplay the front-page animation
-            {
-                overlay: true,
-                trigger: "click",
-                responsive: false
-            }
-        );
+        function runFreezeframe() {
+            console.log("loaded! {{ page.title }} ")
+            if (window.ff) window.ff.destroy()
+            window.ff = new Freezeframe('img[src$=".gif"]:not(img[src="images/hero-animation.gif"])',  // super-hacky way to ignore the front-page animation
+                {
+                    overlay: true,
+                    trigger: "click",
+                    responsive: false
+                }
+            );
+        }
+
+        window.addEventListener('DOMContentLoaded', (event) => {
+            document$.subscribe(runFreezeframe) // run this command every time the document changes (since it's an SPA)
+        });
     </script>
+    {{ super ()}}
 {% endblock %}
