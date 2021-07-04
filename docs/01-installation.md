@@ -72,6 +72,13 @@ cd polynote
 To change any of the default configuration, you'll need to copy the included [`config-template.yml`](https://github.com/polynote/polynote/blob/master/config-template.yml)
 file to `config.yml`, and uncomment the sections you'd like to change. Check out the template itself for more information.
 
+_Windows Subsystem for Linux Users_: WSL default networking does not share the `127.0.0.1` address with the Windows environment. To access the web interface from a Windows browser, make sure to include these lines in your `config.yml` file:
+
+```
+listen:
+  host: 0.0.0.0
+```
+
 ## Run
 To start the server, run the included python script:
 
